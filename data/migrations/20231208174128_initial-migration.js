@@ -23,6 +23,7 @@ exports.up = async function(knex) {
         .inTable('recipes')
         .onDelete('RESTRICT')
         .onUpdate('RESTRICT')
+        table.integer('step_number').notNullable();
     })
     .createTable('step_ingredients', table => {
         table.increments('step_ingredient_id')
